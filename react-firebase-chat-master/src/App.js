@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
+import configData from "./firebase-config.json";
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -9,15 +10,7 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-firebase.initializeApp({
-  apiKey: "AIzaSyDSWJWFiWOCoiw1j9pQtqaOGyGzyCzG4Uo",
-  authDomain: "project-numba-2-b0f46.firebaseapp.com",
-  projectId: "project-numba-2-b0f46",
-  storageBucket: "project-numba-2-b0f46.appspot.com",
-  messagingSenderId: "595448504357",
-  appId: "1:595448504357:web:dd19f7e79befd0234fdfcc",
-  measurementId: "G-75FS9E90QJ"
-})
+firebase.initializeApp(configData);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
